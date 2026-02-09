@@ -6,7 +6,7 @@
 <title>NARSHIMHA REDDY</title>
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Meta Pixel Code -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){
 if(f.fbq)return;
@@ -26,12 +26,9 @@ fbq('track','PageView');
 
 <style>
 body{margin:0;overflow:hidden;font-family:sans-serif}
-
-/* VIDEO */
 video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:-1;}
 
-/* NAME BOX */
 .name-box{
   padding:12px 28px;font-weight:900;font-size:28px;border-radius:12px;
   color:#00f6ff;background:rgba(0,0,0,0.5);
@@ -45,7 +42,6 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
   100%{color:#ff0033;}
 }
 
-/* PROFILE IMAGE */
 .profile-neon{
   width:120px;height:120px;border-radius:50%;
   border:4px solid #00f6ff;
@@ -58,7 +54,6 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
   to{box-shadow:0 0 45px #00f6ff;}
 }
 
-/* BUTTON */
 .neon-btn{
   background:#00f6ff;color:#000;font-weight:900;padding:16px 28px;
   border-radius:14px;box-shadow:0 0 15px #00f6ff,0 0 40px #00f6ff;
@@ -69,48 +64,39 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
   50%{transform:scale(1.08)}
 }
 
-/* TIMER */
 .timer-circle{
   width:44px;height:44px;border-radius:50%;
   border:2px solid #ff0033;display:flex;align-items:center;justify-content:center;
   margin:10px auto;color:#ff0033;font-weight:900;
-  box-shadow:0 0 10px #ff0033,0 0 20px #ff0033;
+  box-shadow:0 0 10px #ff0033;
 }
 
-/* SOUND */
 #soundBtn{
   position:fixed;top:14px;right:14px;z-index:60;
   background:#000;color:#fff;font-weight:800;font-size:12px;
   padding:8px 12px;border-radius:999px;
 }
 
-/* CREDIT */
-.credit-box{
-  position:fixed;bottom:12px;left:50%;transform:translateX(-50%);
-  background:#000;color:#fff;padding:8px 14px;font-size:12px;
-  font-weight:700;border-radius:6px;z-index:50;
+/* JOIN POPUP */
+#joinPopup{
+  position:fixed;top:14px;left:14px;z-index:60;
+  background:#00ff99;color:#000;font-weight:900;
+  padding:8px 14px;border-radius:999px;font-size:12px;
+  display:none;box-shadow:0 0 12px #00ff99;
 }
 
-/* JOIN POPUP */
-.join-popup{
-  position:fixed;
-  bottom:18px;
-  right:14px;
-  background:#000;
-  color:#00ff99;
-  padding:10px 16px;
-  border-radius:10px;
-  font-weight:900;
-  font-size:13px;
-  box-shadow:0 0 12px #00ff99,0 0 25px #00ff99;
-  opacity:0;
-  transform:translateY(20px);
-  transition:.4s;
-  z-index:99;
+/* LIVE MATCH TICKER */
+.ticker-wrap{
+  width:100%;overflow:hidden;background:#000;margin-top:6px;
+  border:1px solid #00ff00;border-radius:6px;
 }
-.join-popup.show{
-  opacity:1;
-  transform:translateY(0);
+.ticker{
+  display:inline-block;white-space:nowrap;color:#00ff00;font-weight:900;
+  padding-left:100%;animation:tickerMove 18s linear infinite;
+}
+@keyframes tickerMove{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
 }
 </style>
 </head>
@@ -118,87 +104,96 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
 <body>
 
 <button id="soundBtn">🔊 SOUND ON</button>
+<div id="joinPopup"></div>
 
 <video id="bgVideo" autoplay muted playsinline></video>
 <div class="overlay"></div>
 
 <div class="min-h-screen flex flex-col items-center justify-center text-center px-6 text-white font-extrabold">
 
-  <div class="name-box">NARSHIMHA REDDY (TELUGU)</div>
+  <div class="name-box">NARSHIMHA REDDY [ TELUGU ]</div>
 
-  <!-- UPDATED PROFILE IMAGE -->
   <img src="https://github.com/mrxsetup/narshimhareddy/blob/main/narshimha.jpg?raw=true" class="profile-neon">
 
   <div class="timer-circle"><span id="countdown">30</span></div>
 
   <p class="mt-3">DAILY CRICKET PREDICTION FREE 👇</p>
 
+  <p class="mt-4 text-sm">💸 CRICKET TIPPING KA BOSS 👑</p>
+
+  <!-- LIVE MATCH LINE -->
+  <div class="ticker-wrap mt-1">
+    <div class="ticker" id="liveMatches">
+      LOADING LIVE CRICKET MATCHES...
+    </div>
+  </div>
+
   <a href="https://t.me/+Bb-am07ayGJmYTE9" onclick="fbq('track','Lead')">
     <div class="neon-btn mt-6">🚀 JOIN NARSHIMHA REDDY TELEGRAM</div>
   </a>
 
-  <p class="mt-6 text-sm">💸 CRICKET TIPPING KA BOSS 👑</p>
-
 </div>
 
-<a href="https://t.me/mrxsetup" target="_blank">
-  <div class="credit-box">CLICK FOR ADS – AD SETUP BY @mrxsetup</div>
-</a>
-
-<!-- JOIN POPUP -->
-<div id="joinPopup" class="join-popup"></div>
+<!-- SOUND EFFECT -->
+<audio id="joinSound" src="https://assets.mixkit.co/sfx/preview/mixkit-bell-notification-933.mp3"></audio>
 
 <script>
 /* VIDEO */
-const videos = [
-  "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206316/50v_iedioy.mp4",
-  "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206325/51v_mtwllp.mp4"
+const videos=[
+ "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206316/50v_iedioy.mp4",
+ "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206325/51v_mtwllp.mp4"
 ];
-let index = 0;
-const video = document.getElementById("bgVideo");
-function loadVideo(){
-  video.src = videos[index];
-  video.load();
-  video.play().catch(()=>{});
-}
-video.onended = ()=>{
-  index = (index + 1) % videos.length;
-  loadVideo();
-};
-loadVideo();
+let index=0;
+const video=document.getElementById("bgVideo");
+video.src=videos[index];video.play();
+video.onended=()=>{index=(index+1)%videos.length;video.src=videos[index];video.play();};
 
-/* SOUND */
-const soundBtn = document.getElementById("soundBtn");
-soundBtn.addEventListener("click", e=>{
+/* SOUND BUTTON */
+const soundBtn=document.getElementById("soundBtn");
+soundBtn.onclick=e=>{
   e.stopPropagation();
-  video.muted = !video.muted;
-  soundBtn.innerText = video.muted ? "🔊 SOUND ON" : "🔇 SOUND OFF";
-});
+  video.muted=!video.muted;
+  soundBtn.innerText=video.muted?"🔊 SOUND ON":"🔇 SOUND OFF";
+};
 
 /* TIMER */
-let timeLeft = 30;
-const countdown = document.getElementById("countdown");
+let timeLeft=30;
 setInterval(()=>{
-  countdown.innerText = timeLeft;
-  timeLeft = timeLeft > 0 ? timeLeft - 1 : 30;
+  document.getElementById("countdown").innerText=timeLeft;
+  timeLeft=timeLeft>0?timeLeft-1:30;
 },1000);
 
-/* RANDOM JOIN POPUP */
-const names = [
-  "RAHUL","SHUBHAM","AMAN","VIKAS","ROHIT","ARJUN",
-  "KARTHIK","SURESH","PRADEEP","MANOJ","SUNIL","RAVI","NAVEEN"
-];
-const popup = document.getElementById("joinPopup");
+/* JOIN POPUP + SOUND */
+const names=["RAHUL","SHUBHAM","AMIT","KARTHIK","ROHIT","ARJUN","SANJAY"];
+const popup=document.getElementById("joinPopup");
+const joinSound=document.getElementById("joinSound");
 
-function showPopup(){
-  const randomName = names[Math.floor(Math.random()*names.length)];
-  popup.innerText = `${randomName} JUST JOINED 🚀`;
-  popup.classList.add("show");
+setInterval(()=>{
+  const name=names[Math.floor(Math.random()*names.length)];
+  popup.innerText=name+" JUST JOINED 🚀";
+  popup.style.display="block";
+  joinSound.currentTime=0;
+  joinSound.play().catch(()=>{});
+  setTimeout(()=>popup.style.display="none",2500);
+},4000);
 
-  setTimeout(()=>popup.classList.remove("show"), 2500);
-}
-
-setInterval(showPopup, 4000);
+/* LIVE CRICKET MATCH API (AUTO FETCH) */
+fetch("https://api.cricapi.com/v1/currentMatches?apikey=demo")
+.then(res=>res.json())
+.then(data=>{
+  if(data.data && data.data.length){
+    let text="";
+    data.data.slice(0,6).forEach(match=>{
+      text += match.name + " • ";
+    });
+    document.getElementById("liveMatches").innerText=text;
+  } else {
+    document.getElementById("liveMatches").innerText="TODAY: IPL • PSL • BBL • SA20 • LIVE MATCHES";
+  }
+})
+.catch(()=>{
+  document.getElementById("liveMatches").innerText="TODAY: IPL • PSL • BBL • SA20 • LIVE MATCHES";
+});
 </script>
 
 </body>
