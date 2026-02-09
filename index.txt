@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ANSHU REPORTER - Telegram Join</title>
+
+<!-- ===== PIXEL CODE PLACEHOLDER ===== -->
+<script>
+  // Replace YOUR_PIXEL_ID with your Meta Pixel ID
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #000000, #121212);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #00ffd5;
+  box-shadow: 0 0 25px rgba(0,255,213,0.7);
+  margin-bottom: 25px;
+}
+
+/* Name Style */
+.name {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #00ffd5;
+  text-shadow: 0 0 15px rgba(0,255,213,0.9);
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 35px;
+}
+
+/* Telegram Button */
+.telegram-btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(45deg, #00ffd5, #00ffa6);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,213,0.7);
+  transition: 0.3s ease;
+}
+
+.telegram-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0,255,213,1);
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://1drv.ms/i/c/dfcc40f0e6500d2f/IQA3fesWHyOeQ6f7K1kwhhe9Ad4J2ITOHFyzQ9LhjyfWolE?e=gMNYUh" class="profile-img">
+
+<div class="name">ANSHU REPORTER</div>
+
+<div class="subtitle">
+🔥 Real Reports • Fast Updates • Trusted Source 🔥
+</div>
+
+<a href="https://t.me/+zZdHbeweUK8wYzVl" class="telegram-btn">
+🚀 JOIN TELEGRAM NOW
+</a>
+
+</body>
+</html>
