@@ -26,77 +26,88 @@ fbq('track','PageView');
 
 <style>
 body{margin:0;overflow:hidden;font-family:sans-serif}
-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+
+video{
+position:fixed;inset:0;width:100%;height:100%;
+object-fit:cover;z-index:-2;
+}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:-1;}
 
 .name-box{
-  padding:12px 28px;font-weight:900;font-size:28px;border-radius:12px;
-  color:#00f6ff;background:rgba(0,0,0,0.5);
-  animation:colorChange 3s infinite alternate;
+padding:12px 28px;font-weight:900;font-size:28px;border-radius:12px;
+color:#00f6ff;background:rgba(0,0,0,0.5);
+animation:colorChange 3s infinite alternate;
 }
 @keyframes colorChange{
-  0%{color:#00f6ff;}
-  25%{color:#ff00ff;}
-  50%{color:#ffdc00;}
-  75%{color:#00ff99;}
-  100%{color:#ff0033;}
+0%{color:#00f6ff;}
+25%{color:#ff00ff;}
+50%{color:#ffdc00;}
+75%{color:#00ff99;}
+100%{color:#ff0033;}
 }
 
 .profile-neon{
-  width:120px;height:120px;border-radius:50%;
-  border:4px solid #00f6ff;
-  box-shadow:0 0 15px #00f6ff,0 0 45px #00f6ff;
-  margin:20px auto;animation:glow 2s infinite alternate;
-  object-fit:cover;
+width:120px;height:120px;border-radius:50%;
+border:4px solid #00f6ff;
+box-shadow:0 0 15px #00f6ff,0 0 45px #00f6ff;
+margin:20px auto;animation:glow 2s infinite alternate;
+object-fit:cover;
 }
 @keyframes glow{
-  from{box-shadow:0 0 15px #00f6ff;}
-  to{box-shadow:0 0 45px #00f6ff;}
+from{box-shadow:0 0 15px #00f6ff;}
+to{box-shadow:0 0 45px #00f6ff;}
 }
 
 .neon-btn{
-  background:#00f6ff;color:#000;font-weight:900;padding:16px 28px;
-  border-radius:14px;box-shadow:0 0 15px #00f6ff,0 0 40px #00f6ff;
-  animation:pulse 1.5s infinite;
+background:#00f6ff;color:#000;font-weight:900;padding:16px 28px;
+border-radius:14px;box-shadow:0 0 15px #00f6ff,0 0 40px #00f6ff;
+animation:pulse 1.5s infinite;text-align:center;
 }
 @keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.08)}
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.08)}
 }
 
 .timer-circle{
-  width:44px;height:44px;border-radius:50%;
-  border:2px solid #ff0033;display:flex;align-items:center;justify-content:center;
-  margin:10px auto;color:#ff0033;font-weight:900;
-  box-shadow:0 0 10px #ff0033;
+width:44px;height:44px;border-radius:50%;
+border:2px solid #ff0033;display:flex;align-items:center;justify-content:center;
+margin:10px auto;color:#ff0033;font-weight:900;
+box-shadow:0 0 10px #ff0033;
 }
 
 #soundBtn{
-  position:fixed;top:14px;right:14px;z-index:60;
-  background:#000;color:#fff;font-weight:800;font-size:12px;
-  padding:8px 12px;border-radius:999px;
+position:fixed;top:14px;right:14px;z-index:60;
+background:#000;color:#fff;font-weight:800;font-size:12px;
+padding:8px 12px;border-radius:999px;
 }
 
-/* JOIN POPUP */
 #joinPopup{
-  position:fixed;top:14px;left:14px;z-index:60;
-  background:#00ff99;color:#000;font-weight:900;
-  padding:8px 14px;border-radius:999px;font-size:12px;
-  display:none;box-shadow:0 0 12px #00ff99;
+position:fixed;top:14px;left:14px;z-index:60;
+background:#00ff99;color:#000;font-weight:900;
+padding:8px 14px;border-radius:999px;font-size:12px;
+display:none;box-shadow:0 0 12px #00ff99;
 }
 
-/* LIVE MATCH TICKER */
 .ticker-wrap{
-  width:100%;overflow:hidden;background:#000;margin-top:6px;
-  border:1px solid #00ff00;border-radius:6px;
+width:100%;overflow:hidden;background:#000;margin-top:6px;
+border:1px solid #00ff00;border-radius:6px;
 }
 .ticker{
-  display:inline-block;white-space:nowrap;color:#00ff00;font-weight:900;
-  padding-left:100%;animation:tickerMove 18s linear infinite;
+display:inline-block;white-space:nowrap;color:#00ff00;font-weight:900;
+padding-left:100%;animation:tickerMove 18s linear infinite;
 }
 @keyframes tickerMove{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* CREDIT UNDER BUTTON */
+.ads-credit{
+margin-top:12px;
+font-size:12px;
+font-weight:900;
+color:#ffe600;
+text-shadow:0 0 10px #ffe600;
 }
 </style>
 </head>
@@ -106,7 +117,8 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
 <button id="soundBtn">🔊 SOUND ON</button>
 <div id="joinPopup"></div>
 
-<video id="bgVideo" autoplay muted playsinline></video>
+<!-- VIDEO LOOP FIX -->
+<video id="bgVideo" autoplay muted playsinline loop></video>
 <div class="overlay"></div>
 
 <div class="min-h-screen flex flex-col items-center justify-center text-center px-6 text-white font-extrabold">
@@ -121,32 +133,45 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
 
   <p class="mt-4 text-sm">💸 CRICKET TIPPING KA BOSS 👑</p>
 
-  <!-- LIVE MATCH LINE -->
   <div class="ticker-wrap mt-1">
-    <div class="ticker" id="liveMatches">
-      LOADING LIVE CRICKET MATCHES...
-    </div>
+    <div class="ticker" id="liveMatches">LOADING LIVE MATCHES...</div>
   </div>
 
+  <!-- JOIN BUTTON -->
   <a href="https://t.me/+Bb-am07ayGJmYTE9" onclick="fbq('track','Lead')">
     <div class="neon-btn mt-6">🚀 JOIN NARSHIMHA REDDY TELEGRAM</div>
   </a>
 
+  <!-- NEW CLICKABLE CREDIT -->
+  <a href="https://t.me/mrxsetup" target="_blank">
+    <div class="ads-credit">
+      ADS SETUP BY - @mrxsetup • CONTACT FOR BUSINESS GROW
+    </div>
+  </a>
+
 </div>
 
-<!-- SOUND EFFECT -->
 <audio id="joinSound" src="https://assets.mixkit.co/sfx/preview/mixkit-bell-notification-933.mp3"></audio>
 
 <script>
-/* VIDEO */
+/* VIDEO LOOP FIX */
 const videos=[
- "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206316/50v_iedioy.mp4",
- "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206325/51v_mtwllp.mp4"
+"https://res.cloudinary.com/dzhykus7z/video/upload/v1768206316/50v_iedioy.mp4",
+"https://res.cloudinary.com/dzhykus7z/video/upload/v1768206325/51v_mtwllp.mp4"
 ];
 let index=0;
 const video=document.getElementById("bgVideo");
-video.src=videos[index];video.play();
-video.onended=()=>{index=(index+1)%videos.length;video.src=videos[index];video.play();};
+
+function loadVideo(){
+  video.src=videos[index];
+  video.load();
+  video.play().catch(()=>{});
+}
+video.onended=()=>{
+  index=(index+1)%videos.length;
+  loadVideo();
+};
+loadVideo();
 
 /* SOUND BUTTON */
 const soundBtn=document.getElementById("soundBtn");
@@ -177,23 +202,8 @@ setInterval(()=>{
   setTimeout(()=>popup.style.display="none",2500);
 },4000);
 
-/* LIVE CRICKET MATCH API (AUTO FETCH) */
-fetch("https://api.cricapi.com/v1/currentMatches?apikey=demo")
-.then(res=>res.json())
-.then(data=>{
-  if(data.data && data.data.length){
-    let text="";
-    data.data.slice(0,6).forEach(match=>{
-      text += match.name + " • ";
-    });
-    document.getElementById("liveMatches").innerText=text;
-  } else {
-    document.getElementById("liveMatches").innerText="TODAY: IPL • PSL • BBL • SA20 • LIVE MATCHES";
-  }
-})
-.catch(()=>{
-  document.getElementById("liveMatches").innerText="TODAY: IPL • PSL • BBL • SA20 • LIVE MATCHES";
-});
+/* LIVE MATCH FALLBACK */
+document.getElementById("liveMatches").innerText="IPL • PSL • BBL • SA20 • TODAY ALL MATCHES LIVE •";
 </script>
 
 </body>
