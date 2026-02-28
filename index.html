@@ -1,210 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NARSHIMHA REDDY</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAAZIGAR (GAURAV)</title>
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;
-n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];
-t=b.createElement(e);t.async=!0;
-t.src=v;
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','2149267269227924');
-fbq('track','PageView');
-</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-<style>
-body{margin:0;overflow:hidden;font-family:sans-serif}
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s){
+            if(f.fbq)return;
+            n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+        }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-video{
-position:fixed;inset:0;width:100%;height:100%;
-object-fit:cover;z-index:-2;
-}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:-1;}
+        fbq('init','2149267269227924');
+        fbq('track','PageView');
+    </script>
 
-.name-box{
-padding:12px 28px;font-weight:900;font-size:28px;border-radius:12px;
-color:#00f6ff;background:rgba(0,0,0,0.5);
-animation:colorChange 3s infinite alternate;
-}
-@keyframes colorChange{
-0%{color:#00f6ff;}
-25%{color:#ff00ff;}
-50%{color:#ffdc00;}
-75%{color:#00ff99;}
-100%{color:#ff0033;}
-}
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2149267269227924&ev=PageView&noscript=1"/>
+    </noscript>
 
-.profile-neon{
-width:120px;height:120px;border-radius:50%;
-border:4px solid #00f6ff;
-box-shadow:0 0 15px #00f6ff,0 0 45px #00f6ff;
-margin:20px auto;animation:glow 2s infinite alternate;
-object-fit:cover;
-}
-@keyframes glow{
-from{box-shadow:0 0 15px #00f6ff;}
-to{box-shadow:0 0 45px #00f6ff;}
-}
-
-.neon-btn{
-background:#00f6ff;color:#000;font-weight:900;padding:16px 28px;
-border-radius:14px;box-shadow:0 0 15px #00f6ff,0 0 40px #00f6ff;
-animation:pulse 1.5s infinite;text-align:center;
-}
-@keyframes pulse{
-0%,100%{transform:scale(1)}
-50%{transform:scale(1.08)}
-}
-
-.timer-circle{
-width:44px;height:44px;border-radius:50%;
-border:2px solid #ff0033;display:flex;align-items:center;justify-content:center;
-margin:10px auto;color:#ff0033;font-weight:900;
-box-shadow:0 0 10px #ff0033;
-}
-
-#soundBtn{
-position:fixed;top:14px;right:14px;z-index:60;
-background:#000;color:#fff;font-weight:800;font-size:12px;
-padding:8px 12px;border-radius:999px;
-}
-
-#joinPopup{
-position:fixed;top:14px;left:14px;z-index:60;
-background:#00ff99;color:#000;font-weight:900;
-padding:8px 14px;border-radius:999px;font-size:12px;
-display:none;box-shadow:0 0 12px #00ff99;
-}
-
-.ticker-wrap{
-width:100%;overflow:hidden;background:#000;margin-top:6px;
-border:1px solid #00ff00;border-radius:6px;
-}
-.ticker{
-display:inline-block;white-space:nowrap;color:#00ff00;font-weight:900;
-padding-left:100%;animation:tickerMove 18s linear infinite;
-}
-@keyframes tickerMove{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
-}
-
-/* CREDIT UNDER BUTTON */
-.ads-credit{
-margin-top:12px;
-font-size:12px;
-font-weight:900;
-color:#ffe600;
-text-shadow:0 0 10px #ffe600;
-}
-</style>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
 
-<body>
+<body class="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center p-4">
 
-<button id="soundBtn">🔊 SOUND ON</button>
-<div id="joinPopup"></div>
+    <div class="bg-white rounded-3xl shadow-xl p-8 w-full max-w-sm text-center">
 
-<!-- VIDEO LOOP FIX -->
-<video id="bgVideo" autoplay muted playsinline loop></video>
-<div class="overlay"></div>
+        <div class="mx-auto w-24 h-24 mb-4">
+            <img src="https://github.com/mrxsetup/narshimhareddy/blob/main/narshimha.jpg?raw=true"
+                 class="w-full h-full rounded-full object-cover border-4 border-white shadow-md">
+        </div>
 
-<div class="min-h-screen flex flex-col items-center justify-center text-center px-6 text-white font-extrabold">
+        <h1 class="text-2xl font-black text-gray-900 mb-1 uppercase">
+            BAAZIGAR (GAURAV)
+        </h1>
 
-  <div class="name-box">NARSHIMHA REDDY [ TELUGU ]</div>
+        <p class="text-gray-500 text-xs font-bold mb-6">
+            1,000,000+ Subscribers
+        </p>
 
-  <img src="https://github.com/mrxsetup/narshimhareddy/blob/main/narshimha.jpg?raw=true" class="profile-neon">
+        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+            Join now for exclusive insights and daily tips.
+        </p>
 
-  <div class="timer-circle"><span id="countdown">30</span></div>
+        <p class="text-blue-500 text-xs font-semibold mb-3 animate-pulse">
+            Tap button to view in Telegram
+        </p>
 
-  <p class="mt-3">DAILY CRICKET PREDICTION FREE 👇</p>
+        <a href="https://t.me/+Bb-am07ayGJmYTE9" id="joinBtn"
+           class="block w-full bg-[#229ED9] hover:bg-[#1A8LB5] text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 transition-transform active:scale-95">
 
-  <p class="mt-4 text-sm">💸 CRICKET TIPPING KA BOSS 👑</p>
+            <span id="btnText">JOIN CHANNEL</span>
+            <span id="btnLoad" class="hidden">Loading...</span>
+        </a>
 
-  <div class="ticker-wrap mt-1">
-    <div class="ticker" id="liveMatches">LOADING LIVE MATCHES...</div>
-  </div>
+        <div class="mt-6 text-[10px] text-gray-400">
+            If you have Telegram, you can view and join<br>this channel right away.
+        </div>
 
-  <!-- JOIN BUTTON -->
-  <a href="https://t.me/+Bb-am07ayGJmYTE9" onclick="fbq('track','Lead')">
-    <div class="neon-btn mt-6">🚀 JOIN NARSHIMHA REDDY TELEGRAM</div>
-  </a>
-
-  <!-- NEW CLICKABLE CREDIT -->
-  <a href="https://t.me/mrxsetup" target="_blank">
-    <div class="ads-credit">
-      ADS SETUP BY - @mrxsetup • CONTACT FOR BUSINESS GROW
+        <div class="mt-2 text-[10px] text-gray-300">
+            Privacy • Terms
+        </div>
     </div>
-  </a>
 
-</div>
+    <script>
+        document.getElementById('joinBtn').addEventListener('click', function(e) {
+            e.preventDefault();
 
-<audio id="joinSound" src="https://assets.mixkit.co/sfx/preview/mixkit-bell-notification-933.mp3"></audio>
+            document.getElementById('btnText').style.display = 'none';
+            document.getElementById('btnLoad').classList.remove('hidden');
 
-<script>
-/* VIDEO LOOP FIX */
-const videos=[
-"https://res.cloudinary.com/dzhykus7z/video/upload/v1768206316/50v_iedioy.mp4",
-"https://res.cloudinary.com/dzhykus7z/video/upload/v1768206325/51v_mtwllp.mp4"
-];
-let index=0;
-const video=document.getElementById("bgVideo");
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
 
-function loadVideo(){
-  video.src=videos[index];
-  video.load();
-  video.play().catch(()=>{});
-}
-video.onended=()=>{
-  index=(index+1)%videos.length;
-  loadVideo();
-};
-loadVideo();
-
-/* SOUND BUTTON */
-const soundBtn=document.getElementById("soundBtn");
-soundBtn.onclick=e=>{
-  e.stopPropagation();
-  video.muted=!video.muted;
-  soundBtn.innerText=video.muted?"🔊 SOUND ON":"🔇 SOUND OFF";
-};
-
-/* TIMER */
-let timeLeft=30;
-setInterval(()=>{
-  document.getElementById("countdown").innerText=timeLeft;
-  timeLeft=timeLeft>0?timeLeft-1:30;
-},1000);
-
-/* JOIN POPUP + SOUND */
-const names=["RAHUL","SHUBHAM","AMIT","KARTHIK","ROHIT","ARJUN","SANJAY"];
-const popup=document.getElementById("joinPopup");
-const joinSound=document.getElementById("joinSound");
-
-setInterval(()=>{
-  const name=names[Math.floor(Math.random()*names.length)];
-  popup.innerText=name+" JUST JOINED 🚀";
-  popup.style.display="block";
-  joinSound.currentTime=0;
-  joinSound.play().catch(()=>{});
-  setTimeout(()=>popup.style.display="none",2500);
-},4000);
-
-/* LIVE MATCH FALLBACK */
-document.getElementById("liveMatches").innerText="IPL • PSL • BBL • SA20 • TODAY ALL MATCHES LIVE •";
-</script>
+            setTimeout(function(){
+                window.location.href = "https://t.me/+Bb-am07ayGJmYTE9";
+            }, 500);
+        });
+    </script>
 
 </body>
 </html>
